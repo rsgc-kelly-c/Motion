@@ -34,8 +34,15 @@ class Bouncer {
     if ((location.x > width) || (location.x < 0)) {
       velocity.x = velocity.x * -1;
     }
-    if ((location.y > height) || (location.y < 0)) {
+    if ((location.y < 0)) {
       velocity.y = velocity.y * -1;
+    }
+    if(location.y > height){
+      PImage img;
+      img = loadImage("gameOver.png");
+      img.width = width;
+      img.height = height;
+      background(img);
     }
     
   }
